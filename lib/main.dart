@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project/screens/form_screen.dart';
+import 'package:project/screens/tela_inicial.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,10 +23,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FormScreen(),
+      home: const InitialScreen(),
     );
   }
 }
-
-
-

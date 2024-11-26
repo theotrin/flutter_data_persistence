@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:project/components/difficulty.dart';
 
@@ -73,7 +72,7 @@ class _TasksState extends State<Tasks> {
                             width: 200,
                             child: Text(
                               widget.nome,
-                              style:  TextStyle(
+                              style: TextStyle(
                                   fontSize: 24,
                                   overflow: TextOverflow.ellipsis),
                             ),
@@ -83,23 +82,13 @@ class _TasksState extends State<Tasks> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Container(
-                          height: 52,
-                          width: 52,
+                          height: 50,
+                          width: 50,
                           child: ElevatedButton(
                             onPressed: levelUp,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: const [
-                                Icon(Icons.arrow_drop_up),
-                                Text(
-                                  'UP',
-                                  style: TextStyle(fontSize: 12),
-                                ),
-                              ],
-                            ),
+                            child: Icon(Icons.arrow_drop_up),
                           ),
                         ),
                       )
