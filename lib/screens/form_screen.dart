@@ -126,6 +126,11 @@ class _FormScreenState extends State<FormScreen> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           print(nameController.text);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Salvando nova tarefa...'),
+                            ),
+                          );
                         }
                       },
                       style: const ButtonStyle(
