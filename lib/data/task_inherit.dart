@@ -13,7 +13,7 @@ class TaskInherited extends InheritedWidget {
   ];
 
   void addTask(String name, String photo, int difficulty) {
-    taskList.add(Tasks(name, photo, difficulty));
+    taskList.add(Tasks( name, photo, difficulty));
   }
 
   final Widget child;
