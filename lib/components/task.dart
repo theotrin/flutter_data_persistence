@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:project/components/difficulty.dart';
 
-class Tasks extends StatefulWidget {
+class Task extends StatefulWidget {
   final String nome;
   final String foto;
   final int dificuldade;
 
-  const Tasks(this.nome, this.foto, this.dificuldade, {Key? key})
+  const Task(this.nome, this.foto, this.dificuldade, {Key? key})
       : super(key: key);
 
   @override
-  State<Tasks> createState() => _TasksState();
+  State<Task> createState() => _TaskState();
 }
 
-class _TasksState extends State<Tasks> {
+class _TaskState extends State<Task> {
   int level = 1;
 
   void levelUp() {

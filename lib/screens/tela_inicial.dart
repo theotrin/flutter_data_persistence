@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project/components/tasks.dart';
+import 'package:project/components/task.dart';
 import 'package:project/data/task_inherit.dart';
 import 'package:project/screens/form_screen.dart';
 
