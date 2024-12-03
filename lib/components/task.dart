@@ -14,6 +14,13 @@ class Task extends StatefulWidget {
 }
 
 class _TaskState extends State<Task> {
+  bool assertOrNetwork() {
+    if (widget.foto.contains('http')) {
+      return false;
+    }
+    return true;
+  }
+
   int level = 1;
 
   void levelUp() {
@@ -56,11 +63,22 @@ class _TaskState extends State<Task> {
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(4),
-                          child: Image.asset(
-                            widget.foto,
-                            height: 100,
-                            width: 72,
-                            fit: BoxFit.cover,
+                          child: ClipRRect(
+                            child: assertOrNetwork()
+                                ? SizedBox(
+                                    width: 80,
+                                    height: 80,
+                                    child: Image.asset(
+                                      widget.foto,
+                                      fit: BoxFit.cover,
+                                      excludeFromSemantics: true,
+                                    ))
+                                : Image.network(
+                                    widget.foto,
+                                    width: 80,
+                                    height: 80,
+                                    fit: BoxFit.cover,
+                                  ),
                           ),
                         ),
                       ),
