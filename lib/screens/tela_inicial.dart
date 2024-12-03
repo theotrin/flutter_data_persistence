@@ -18,6 +18,13 @@ class _InitialScreenState extends State<InitialScreen> {
       appBar: AppBar(
         title: const Text('Tarefas: '),
         leading: Icon(Icons.add_task),
+        actions: [
+          IconButton(
+              onPressed: () {
+                setState(() {});
+              },
+              icon: Icon(Icons.refresh))
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.only(top: 8, bottom: 70),
