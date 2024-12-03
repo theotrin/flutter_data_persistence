@@ -37,7 +37,7 @@ class _InitialScreenState extends State<InitialScreen> {
                   );
                   break;
                 case ConnectionState.waiting:
-                 return Center(
+                  return Center(
                     child: Column(
                       children: [
                         CircularProgressIndicator(),
@@ -96,7 +96,9 @@ class _InitialScreenState extends State<InitialScreen> {
                 taskContext: context,
               ),
             ),
-          );
+          ).then((value) => setState(() {
+                print('Recarregando tela inicial...');
+              }));
         },
         backgroundColor: Colors.blue[100],
         child: const Icon(Icons.add),
