@@ -27,13 +27,34 @@ class _InitialScreenState extends State<InitialScreen> {
               List<Task>? items = snapshot.data;
               switch (snapshot.connectionState) {
                 case ConnectionState.none:
-                  // TODO: Handle this case.
+                  return Center(
+                    child: Column(
+                      children: [
+                        CircularProgressIndicator(),
+                        Text('Carregando...'),
+                      ],
+                    ),
+                  );
                   break;
                 case ConnectionState.waiting:
-                  // TODO: Handle this case.
+                 return Center(
+                    child: Column(
+                      children: [
+                        CircularProgressIndicator(),
+                        Text('Carregando...'),
+                      ],
+                    ),
+                  );
                   break;
                 case ConnectionState.active:
-                  // TODO: Handle this case.
+                  return Center(
+                    child: Column(
+                      children: [
+                        CircularProgressIndicator(),
+                        Text('Carregando...'),
+                      ],
+                    ),
+                  );
                   break;
                 case ConnectionState.done:
                   if (snapshot.hasData && items != null) {
@@ -45,9 +66,25 @@ class _InitialScreenState extends State<InitialScreen> {
                             return tarefa;
                           });
                     }
+                    return Center(
+                      child: Column(
+                        children: [
+                          Icon(
+                            Icons.error_outline,
+                            size: 128,
+                          ),
+                          Text(
+                            'Não há nenhuma tarefa :/',
+                            style: TextStyle(fontSize: 32),
+                          ),
+                        ],
+                      ),
+                    );
                   }
+                  return Text('Erro ao carregar tarefas');
                   break;
               }
+              return Text('Erro desconhecido');
             }),
       ),
       floatingActionButton: FloatingActionButton(
