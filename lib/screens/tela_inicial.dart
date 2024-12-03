@@ -18,20 +18,18 @@ class _InitialScreenState extends State<InitialScreen> {
         title: const Text('Flutter: Primeiros Passos'),
         leading: Icon(Icons.add_task),
       ),
-      body: Container(
-        color: Color.fromARGB(255, 208, 221, 237),
-        child: ListView(
-          children: TaskInherited.of(context)!.taskList,
-        
-        ),
-        
+      body: Padding(
+        padding: EdgeInsets.only(top: 8, bottom: 70),
+        child: Container(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (contextNew) => FormScreen(taskContext: context,),
+              builder: (contextNew) => FormScreen(
+                taskContext: context,
+              ),
             ),
           );
         },
