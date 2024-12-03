@@ -22,7 +22,20 @@ class TaskDao {
         await bancoDeDados.query(_tablename);
     print('Procurando dados no banco de dados... Econtrado: $result');
 
-    return toList();
+    return toList(result);
+  }
+
+  List<Task> toList(List<Map<String, dynamic>> mapaDeTarefas) {
+    print('Convertendo lista de tarefas...');
+    final List<Task> tarefas = [];
+
+    for (Map<String, dynamic> linha in mapaDeTarefas) {
+      final Task tarefa = Task(linha[_name], linha[_image], linha[_difficulty]);
+      tarefas.add(tarefa);
+    }
+
+    print('Lista de tarefas: $tarefas');
+    return tarefas;
   }
 
   Future<List<Task>> find(String taskName) async {}
