@@ -101,19 +101,29 @@ class _TaskState extends State<Task> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          height: 50,
-                          width: 50,
+                        padding: const EdgeInsets.only(
+                            right:
+                                8.0), // Ajustando o padding para evitar overflow
+                        child: SizedBox(
+                          height: 48, // Mantém o botão com tamanho consistente
+                          width: 48,
                           child: ElevatedButton(
                             onPressed: levelUp,
                             onLongPress: () {
                               TaskDao().delete(widget.nome);
                             },
-                            child: Icon(Icons.arrow_drop_up),
+                            style: ElevatedButton.styleFrom(
+                              padding:
+                                  EdgeInsets.zero, // Remove padding interno
+                              shape: CircleBorder(), // Botão circular
+                            ),
+                            child: const Icon(
+                              Icons.arrow_drop_up,
+                              size: 28, // Ajusta o tamanho do ícone
+                            ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
