@@ -135,23 +135,23 @@ class _FormScreenState extends State<FormScreen> {
                             imageController.text,
                             int.parse(difficultyController.text),
                           ));
-                          
+
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Salvando nova tarefa...'),
                             ),
                           );
-                          Navigator.pop(context);
+
+                          // Retorna um valor indicando que uma nova tarefa foi salva
+                          Navigator.pop(context, true);
                         }
                       },
-                      style: const ButtonStyle(
-                        foregroundColor: WidgetStatePropertyAll(Colors.white),
-                        backgroundColor: WidgetStatePropertyAll(Colors.blue),
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.blue,
                       ),
-                      child: const Text(
-                        'Adcionar!',
-                      ),
-                    )
+                      child: const Text('Adicionar!'),
+                    ),
                   ],
                 ),
               ),
